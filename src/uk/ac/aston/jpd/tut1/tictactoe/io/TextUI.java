@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
+import java.util.Scanner;
 
 /**
  * Provides commands for implementing a basic text UI.
@@ -108,13 +109,20 @@ public class TextUI {
 	 */
 	public int[] readNumbers(int expected) {
 		// allocate array
-
+		int[] integers = new int[expected];
 		// read a line
-		
+		String thisLine = readLine();
 		// create a Scanner on the line
-
+		Scanner lineScanner = new Scanner(thisLine);
 		// initialize array with hasNextInt() / nextInt()
-
+		for(int i=0; i < expected; i++) {
+			if(lineScanner.hasNext()) {
+				integers[i] = lineScanner.nextInt();
+			} else {
+				integers[i] = 0;
+			}
+		}
 		// return array
+		return integers;
 	}
 }
