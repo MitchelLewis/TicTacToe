@@ -112,6 +112,9 @@ public class TextUI {
 		int[] integers = new int[expected];
 		// read a line
 		String thisLine = readLine();
+		if(thisLine == null) {
+			return null;
+		}
 		// create a Scanner on the line
 		Scanner lineScanner = new Scanner(thisLine);
 		// initialize array with hasNextInt() / nextInt()

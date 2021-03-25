@@ -17,6 +17,15 @@ public class Player {
 		return this.name;
 	}
 
+	public String getInitials() {
+		String[] splitName = name.split(" ");
+		StringBuilder initials = new StringBuilder();
+		for(String name: splitName) {
+			initials.append(name.charAt(0));
+		}
+		return initials.toString();
+	}
+
 	@Override
 	public String toString() {
 		return "Player with name: " + this.name;
